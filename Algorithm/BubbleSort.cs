@@ -17,7 +17,7 @@ namespace Algorithm
             var count = Items.Count;
             for (int j = 0; j < count ; j++)
             {
-                var sc = SwopCount;
+
 
                 for (int i = 0; i < count - 1 - j; i++)
                 {
@@ -30,8 +30,7 @@ namespace Algorithm
                     }
                 }
 
-                if (sc == SwopCount)
-                { break; }
+
             }
         }
     }
