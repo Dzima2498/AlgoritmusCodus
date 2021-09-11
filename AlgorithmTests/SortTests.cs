@@ -19,7 +19,7 @@ namespace Algorithm.Tests
         public void Init()
         {
             Items.Clear();
-            for (int i = 0; i < 3000; i++)
+            for (int i = 0; i < 10000; i++)
             {
                 Items.Add(rnd.Next(0, 100));
             }
@@ -115,6 +115,24 @@ namespace Algorithm.Tests
             for (int i = 0; i < Items.Count - 1; i++)
             {
                 Assert.AreEqual(Sorted[i], bases.Items[i]);
+            }
+
+        }
+        [TestMethod()]
+        public void CombSortTest()
+        {
+            //arrange
+            var comb = new CombSort<int>();
+
+            comb.Items.AddRange(Items);
+
+            //act
+            comb.Sort();
+
+            //assert
+            for (int i = 0; i < Items.Count - 1; i++)
+            {
+                Assert.AreEqual(Sorted[i], comb.Items[i]);
             }
 
         }

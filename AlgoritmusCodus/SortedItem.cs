@@ -65,5 +65,10 @@ namespace AlgoritmusCodus
                 throw new ArgumentException($"obj is not a {nameof(SortedItem)}", nameof(obj));
             }
         }
+
+        public override string ToString()
+        {
+            return Value.ToString();
+        }
     }
 }
