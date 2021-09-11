@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace AlgoritmusCodus
     {
         public ProgressBar ProgressBar { get; set; }
         public Label Label { get; private set; }
-        public int Value { get; set; }
+        public int Value { get; private set; }
         public SortedItem(int value, int number)
         {
             Value = value;
@@ -21,7 +22,7 @@ namespace AlgoritmusCodus
             var y = number * 24;
 
             ProgressBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            ProgressBar.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            ProgressBar.ForeColor = Color.Green;
             ProgressBar.Location = new System.Drawing.Point(84, y);
             ProgressBar.Name = "ProgressBar" + number;
             ProgressBar.Size = new System.Drawing.Size(146, 20);
@@ -29,6 +30,7 @@ namespace AlgoritmusCodus
             ProgressBar.Maximum = 1000;
             ProgressBar.Minimum = 0;
             ProgressBar.Value = Value;
+            ProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
 
             // 
             // label3
@@ -42,6 +44,16 @@ namespace AlgoritmusCodus
             Label.Text = Value.ToString();
         }
 
+        public void SetNewPosition (int value )
+        {
+            Value = value;
+            Label.Text = value.ToString();
+            ProgressBar.Value = value;
+        }
+        public void SetColor (Color color)
+        {
+            ProgressBar.ForeColor = color;
+        }
         public int CompareTo(object obj)
         {
             if(obj is SortedItem item)

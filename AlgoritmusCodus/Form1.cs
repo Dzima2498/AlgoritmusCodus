@@ -1,6 +1,7 @@
 ﻿using Algorithm;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace AlgoritmusCodus
@@ -53,6 +54,35 @@ namespace AlgoritmusCodus
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void BubleButton_Click(object sender, EventArgs e)
+        {
+            var bubble = new BubbleSort<SortedItem>(items);
+            bubble.CompareEvent += Bubble_CompareEvent;
+            bubble.SwopEvent += Bubble_SwopEvent;
+            bubble.Sort();
+        }
+
+        private void Bubble_SwopEvent(object sender, Tuple<SortedItem, SortedItem> e)
+        {
+            var temp = e.Item1.Value;
+            e.Item1.SetNewPosition(e.Item2.Value);
+            e.Item2.SetNewPosition(temp);
+            panel3.Refresh();
+        }
+
+        private void Bubble_CompareEvent(object sender, Tuple<SortedItem, SortedItem> e)
+        {
+            e.Item1.SetColor(Color.Red);
+            e.Item2.SetColor(Color.Blue);
+            panel3.Refresh();
+        }
+
+        private void Swop(SortedItem a, SortedItem b)
+        {
+            a.SetColor(Color.Maroon);
+            b.SetColor(Color.MidnightBlue);
         }
     }
 }

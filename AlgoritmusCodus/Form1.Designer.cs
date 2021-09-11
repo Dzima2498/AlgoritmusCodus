@@ -131,6 +131,7 @@ namespace AlgoritmusCodus
             this.BubleButton.TabIndex = 5;
             this.BubleButton.Text = "Сортировка пузырьком";
             this.BubleButton.UseVisualStyleBackColor = true;
+            this.BubleButton.Click += new System.EventHandler(this.BubleButton_Click);
             // 
             // Form1
             // 
