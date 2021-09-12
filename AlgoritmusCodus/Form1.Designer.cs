@@ -39,6 +39,9 @@ namespace AlgoritmusCodus
             this.FilledButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.BubleButton = new System.Windows.Forms.Button();
+            this.TimeLb = new System.Windows.Forms.Label();
+            this.CompareLb = new System.Windows.Forms.Label();
+            this.SwopLb = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -50,7 +53,7 @@ namespace AlgoritmusCodus
             this.panel1.Controls.Add(this.AddTextBox);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(412, 84);
+            this.panel1.Size = new System.Drawing.Size(316, 84);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -64,7 +67,7 @@ namespace AlgoritmusCodus
             // 
             // AddButton
             // 
-            this.AddButton.Location = new System.Drawing.Point(308, 34);
+            this.AddButton.Location = new System.Drawing.Point(208, 32);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(94, 29);
             this.AddButton.TabIndex = 1;
@@ -76,7 +79,7 @@ namespace AlgoritmusCodus
             // 
             this.AddTextBox.Location = new System.Drawing.Point(10, 34);
             this.AddTextBox.Name = "AddTextBox";
-            this.AddTextBox.Size = new System.Drawing.Size(292, 27);
+            this.AddTextBox.Size = new System.Drawing.Size(192, 27);
             this.AddTextBox.TabIndex = 0;
             // 
             // label2
@@ -92,7 +95,7 @@ namespace AlgoritmusCodus
             // 
             this.FilledTextBox.Location = new System.Drawing.Point(10, 34);
             this.FilledTextBox.Name = "FilledTextBox";
-            this.FilledTextBox.Size = new System.Drawing.Size(292, 27);
+            this.FilledTextBox.Size = new System.Drawing.Size(124, 27);
             this.FilledTextBox.TabIndex = 0;
             // 
             // panel2
@@ -100,14 +103,14 @@ namespace AlgoritmusCodus
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.FilledButton);
             this.panel2.Controls.Add(this.FilledTextBox);
-            this.panel2.Location = new System.Drawing.Point(12, 126);
+            this.panel2.Location = new System.Drawing.Point(353, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(412, 84);
+            this.panel2.Size = new System.Drawing.Size(316, 84);
             this.panel2.TabIndex = 3;
             // 
             // FilledButton
             // 
-            this.FilledButton.Location = new System.Drawing.Point(308, 33);
+            this.FilledButton.Location = new System.Drawing.Point(208, 32);
             this.FilledButton.Name = "FilledButton";
             this.FilledButton.Size = new System.Drawing.Size(94, 29);
             this.FilledButton.TabIndex = 1;
@@ -125,7 +128,7 @@ namespace AlgoritmusCodus
             // 
             // BubleButton
             // 
-            this.BubleButton.Location = new System.Drawing.Point(496, 12);
+            this.BubleButton.Location = new System.Drawing.Point(12, 117);
             this.BubleButton.Name = "BubleButton";
             this.BubleButton.Size = new System.Drawing.Size(146, 61);
             this.BubleButton.TabIndex = 5;
@@ -133,11 +136,41 @@ namespace AlgoritmusCodus
             this.BubleButton.UseVisualStyleBackColor = true;
             this.BubleButton.Click += new System.EventHandler(this.BubleButton_Click);
             // 
+            // TimeLb
+            // 
+            this.TimeLb.AutoSize = true;
+            this.TimeLb.Location = new System.Drawing.Point(12, 190);
+            this.TimeLb.Name = "TimeLb";
+            this.TimeLb.Size = new System.Drawing.Size(61, 20);
+            this.TimeLb.TabIndex = 6;
+            this.TimeLb.Text = "Время: ";
+            // 
+            // CompareLb
+            // 
+            this.CompareLb.AutoSize = true;
+            this.CompareLb.Location = new System.Drawing.Point(12, 222);
+            this.CompareLb.Name = "CompareLb";
+            this.CompareLb.Size = new System.Drawing.Size(177, 20);
+            this.CompareLb.TabIndex = 7;
+            this.CompareLb.Text = "Количество сравнений: ";
+            // 
+            // SwopLb
+            // 
+            this.SwopLb.AutoSize = true;
+            this.SwopLb.Location = new System.Drawing.Point(12, 254);
+            this.SwopLb.Name = "SwopLb";
+            this.SwopLb.Size = new System.Drawing.Size(198, 20);
+            this.SwopLb.TabIndex = 8;
+            this.SwopLb.Text = "Количество перестановок: ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 533);
+            this.Controls.Add(this.SwopLb);
+            this.Controls.Add(this.CompareLb);
+            this.Controls.Add(this.TimeLb);
             this.Controls.Add(this.BubleButton);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -150,6 +183,7 @@ namespace AlgoritmusCodus
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -165,6 +199,9 @@ namespace AlgoritmusCodus
         private System.Windows.Forms.Button FilledButton;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button BubleButton;
+        private System.Windows.Forms.Label TimeLb;
+        private System.Windows.Forms.Label CompareLb;
+        private System.Windows.Forms.Label SwopLb;
     }
 }
 

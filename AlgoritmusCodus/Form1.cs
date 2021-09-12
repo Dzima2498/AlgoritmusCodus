@@ -22,8 +22,8 @@ namespace AlgoritmusCodus
                 {
                     var item = new SortedItem(value, items.Count);
                     items.Add(item);
-                    panel3.Controls.Add(item.ProgressBar);
-                    panel3.Controls.Add(item.Label);
+
+                    RefreshItems(items);
                 }
             }
 
@@ -41,14 +41,37 @@ namespace AlgoritmusCodus
                     {
                         SortedItem item = new SortedItem(rnd.Next(1, 1000), items.Count);
                         items.Add(item);
-                        panel3.Controls.Add(item.ProgressBar);
-                        panel3.Controls.Add(item.Label);
                     }
+
+                    RefreshItems(items);
                 }
                 
             }
 
             FilledTextBox.Text = "";
+        }
+
+        private void DrawItems(List<SortedItem> items)
+        {
+            panel3.Controls.Clear();
+            panel3.Refresh();
+
+            foreach (var item in items)
+            {
+                panel3.Controls.Add(item.ProgressBar);
+                panel3.Controls.Add(item.Label);
+            }
+            panel3.Refresh();
+        }
+
+        private void RefreshItems(List<SortedItem> items)
+        {
+            foreach (var item in items)
+            {
+                item.Refresh();
+            }
+
+            DrawItems(items);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -58,10 +81,16 @@ namespace AlgoritmusCodus
 
         private void BubleButton_Click(object sender, EventArgs e)
         {
+            RefreshItems(items);
+
             var bubble = new BubbleSort<SortedItem>(items);
             bubble.CompareEvent += Bubble_CompareEvent;
             bubble.SwopEvent += Bubble_SwopEvent;
-            bubble.Sort();
+            var time = bubble.Sort();
+
+            TimeLb.Text = "Время: " + time.Seconds + "s " + time.Milliseconds + " ms";
+            SwopLb.Text = "Количество перестановок: " + bubble.SwopCount;
+            CompareLb.Text = "Количество сравнений: " + bubble.ComparsionCount;
         }
 
         private void Bubble_SwopEvent(object sender, Tuple<SortedItem, SortedItem> e)

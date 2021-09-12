@@ -14,10 +14,12 @@ namespace AlgoritmusCodus
         public Label Label { get; private set; }
         public int Value { get; private set; }
         public int Number { get; private set; }
+        public int StartNumber { get; private set; }
         public SortedItem(int value, int number)
         {
             Value = value;
             Number = number;
+            StartNumber = number;
             ProgressBar = new ProgressBar();
             Label = new Label();
 
@@ -56,6 +58,16 @@ namespace AlgoritmusCodus
             Label.Name = "label" + num;
 
         }
+        public void Refresh()
+        {
+            Number = StartNumber;
+            var y = Number * 24;
+            ProgressBar.Location = new Point(84, y);
+            ProgressBar.Name = "ProgressBar" + Number;
+            Label.Location = new Point(22, y);
+            Label.Name = "label" + Number;
+        }
+
         public void SetColor (Color color)
         {
             ProgressBar.ForeColor = color;
