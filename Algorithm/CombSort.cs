@@ -16,7 +16,7 @@ namespace Algorithm
                 for (int i = 0; i < Items.Count; i++)
                 {
                     int j = i;
-                    while ((Items.Count > step + j)&& (Items[j].CompareTo(Items[j + step]) == 1))
+                    while ((Items.Count > step + j)&& (Compare(Items[j], Items[j + step]) == 1))
                     {
                       Swop(j, j + step);
                       j++;

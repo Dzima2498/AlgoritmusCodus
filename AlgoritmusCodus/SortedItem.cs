@@ -13,42 +13,48 @@ namespace AlgoritmusCodus
         public ProgressBar ProgressBar { get; set; }
         public Label Label { get; private set; }
         public int Value { get; private set; }
+        public int Number { get; private set; }
         public SortedItem(int value, int number)
         {
             Value = value;
+            Number = number;
             ProgressBar = new ProgressBar();
             Label = new Label();
 
             var y = number * 24;
 
-            ProgressBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            ProgressBar.Anchor = (AnchorStyles.Top | AnchorStyles.Right);
             ProgressBar.ForeColor = Color.Green;
-            ProgressBar.Location = new System.Drawing.Point(84, y);
+            ProgressBar.Location = new Point(84, y);
             ProgressBar.Name = "ProgressBar" + number;
-            ProgressBar.Size = new System.Drawing.Size(146, 20);
+            ProgressBar.Size = new Size(146, 20);
             ProgressBar.TabIndex = number;
             ProgressBar.Maximum = 1000;
             ProgressBar.Minimum = 0;
             ProgressBar.Value = Value;
-            ProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            ProgressBar.Style = ProgressBarStyle.Continuous;
 
             // 
             // label3
             // 
-            Label.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            Label.Anchor = (AnchorStyles.Top | AnchorStyles.Right);
             Label.AutoSize = true;
-            Label.Location = new System.Drawing.Point(22, y);
+            Label.Location = new Point(22, y);
             Label.Name = "label"+ number;
-            Label.Size = new System.Drawing.Size(50, 20);
+            Label.Size = new Size(50, 20);
             Label.TabIndex = number;
             Label.Text = Value.ToString();
         }
 
-        public void SetNewPosition (int value )
+        public  void SetNewPosition (int num)
         {
-            Value = value;
-            Label.Text = value.ToString();
-            ProgressBar.Value = value;
+            Number = num;
+            var y = num * 24;
+            ProgressBar.Location = new Point(84, y);
+            ProgressBar.Name = "ProgressBar" + num;
+            Label.Location = new Point(22, y);
+            Label.Name = "label" + num;
+
         }
         public void SetColor (Color color)
         {

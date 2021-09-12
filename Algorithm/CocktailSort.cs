@@ -20,7 +20,7 @@ namespace Algorithm
 
                 for (int i = left; i < right; i++)
                 {
-                    if(Items[i].CompareTo(Items[i+1])==1)
+                    if(Compare(Items[i], Items[i + 1]) ==1)
                     {
                         Swop(i, i + 1);
                     }
@@ -30,7 +30,7 @@ namespace Algorithm
 
                 for (int i = right; i > left; i--)
                 {
-                    if(Items[i].CompareTo(Items[i - 1]) == -1)
+                    if(Compare(Items[i], Items[i - 1]) == -1)
                     {
                         Swop(i, i - 1);
                     }

@@ -66,9 +66,13 @@ namespace AlgoritmusCodus
 
         private void Bubble_SwopEvent(object sender, Tuple<SortedItem, SortedItem> e)
         {
-            var temp = e.Item1.Value;
-            e.Item1.SetNewPosition(e.Item2.Value);
+            var temp = e.Item1.Number;
+            e.Item1.SetNewPosition(e.Item2.Number);
             e.Item2.SetNewPosition(temp);
+            panel3.Refresh();
+
+            e.Item1.SetColor(Color.Green);
+            e.Item2.SetColor(Color.Green);
             panel3.Refresh();
         }
 
