@@ -154,5 +154,11 @@ namespace AlgoritmusCodus
             var shell = new ShellSort<SortedItem>(items);
             BtnCLick(shell);
         }
+
+        private void SelectionSortButton_Click(object sender, EventArgs e)
+        {
+            var selection = new SelectionSort<SortedItem>(items);
+            BtnCLick(selection);
+        }
     }
 }

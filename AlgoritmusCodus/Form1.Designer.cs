@@ -46,6 +46,7 @@ namespace AlgoritmusCodus
             this.InsertSortButton = new System.Windows.Forms.Button();
             this.CombSortButton = new System.Windows.Forms.Button();
             this.ShellSortButton = new System.Windows.Forms.Button();
+            this.SelectionSortButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -125,7 +126,7 @@ namespace AlgoritmusCodus
             // panel3
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.Location = new System.Drawing.Point(691, 12);
+            this.panel3.Location = new System.Drawing.Point(743, 12);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(241, 509);
             this.panel3.TabIndex = 4;
@@ -207,11 +208,22 @@ namespace AlgoritmusCodus
             this.ShellSortButton.UseVisualStyleBackColor = true;
             this.ShellSortButton.Click += new System.EventHandler(this.ShellSortButton_Click);
             // 
+            // SelectionSortButton
+            // 
+            this.SelectionSortButton.Location = new System.Drawing.Point(182, 289);
+            this.SelectionSortButton.Name = "SelectionSortButton";
+            this.SelectionSortButton.Size = new System.Drawing.Size(146, 61);
+            this.SelectionSortButton.TabIndex = 13;
+            this.SelectionSortButton.Text = "Сортировка выбором";
+            this.SelectionSortButton.UseVisualStyleBackColor = true;
+            this.SelectionSortButton.Click += new System.EventHandler(this.SelectionSortButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 533);
+            this.ClientSize = new System.Drawing.Size(996, 533);
+            this.Controls.Add(this.SelectionSortButton);
             this.Controls.Add(this.ShellSortButton);
             this.Controls.Add(this.CombSortButton);
             this.Controls.Add(this.InsertSortButton);
@@ -224,7 +236,7 @@ namespace AlgoritmusCodus
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Сортировка выбором";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -254,6 +266,7 @@ namespace AlgoritmusCodus
         private System.Windows.Forms.Button InsertSortButton;
         private System.Windows.Forms.Button CombSortButton;
         private System.Windows.Forms.Button ShellSortButton;
+        private System.Windows.Forms.Button SelectionSortButton;
     }
 }
 
