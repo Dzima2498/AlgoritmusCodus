@@ -136,5 +136,42 @@ namespace Algorithm.Tests
             }
 
         }
+
+        [TestMethod()]
+        public void TreeSortTest()
+        {
+            //arrange
+            var tree = new TreeSort<int>();
+
+            tree.Items.AddRange(Items);
+
+            //act
+            tree.Sort();
+
+            //assert
+            for (int i = 0; i < Items.Count - 1; i++)
+            {
+                Assert.AreEqual(Sorted[i], tree.Items[i]);
+            }
+
+        }
+        [TestMethod()]
+        public void HeapSortTest()
+        {
+            //arrange
+            var heap = new HeapSort<int>();
+
+            heap.Items.AddRange(Items);
+
+            //act
+            heap.Sort();
+
+            //assert
+            for (int i = 0; i < Items.Count - 1; i++)
+            {
+                Assert.AreEqual(Sorted[i], heap.Items[i]);
+            }
+
+        }
     }
 }
