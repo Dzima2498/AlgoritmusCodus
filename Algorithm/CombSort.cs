@@ -8,6 +8,11 @@ namespace Algorithm
 {
     public class CombSort<T> : AlgorithmBase<T> where T : IComparable
     {
+        public CombSort(IEnumerable<T> items) : base(items) { }
+        public CombSort()
+        {
+
+        }
         protected override void MakeSort()
         {
             int step = (int)(Items.Count / 1.247330950103979);

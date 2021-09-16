@@ -42,6 +42,10 @@ namespace AlgoritmusCodus
             this.TimeLb = new System.Windows.Forms.Label();
             this.CompareLb = new System.Windows.Forms.Label();
             this.SwopLb = new System.Windows.Forms.Label();
+            this.CocktailSortButton = new System.Windows.Forms.Button();
+            this.InsertSortButton = new System.Windows.Forms.Button();
+            this.CombSortButton = new System.Windows.Forms.Button();
+            this.ShellSortButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -139,7 +143,7 @@ namespace AlgoritmusCodus
             // TimeLb
             // 
             this.TimeLb.AutoSize = true;
-            this.TimeLb.Location = new System.Drawing.Point(12, 190);
+            this.TimeLb.Location = new System.Drawing.Point(353, 118);
             this.TimeLb.Name = "TimeLb";
             this.TimeLb.Size = new System.Drawing.Size(61, 20);
             this.TimeLb.TabIndex = 6;
@@ -148,7 +152,7 @@ namespace AlgoritmusCodus
             // CompareLb
             // 
             this.CompareLb.AutoSize = true;
-            this.CompareLb.Location = new System.Drawing.Point(12, 222);
+            this.CompareLb.Location = new System.Drawing.Point(353, 150);
             this.CompareLb.Name = "CompareLb";
             this.CompareLb.Size = new System.Drawing.Size(177, 20);
             this.CompareLb.TabIndex = 7;
@@ -157,17 +161,61 @@ namespace AlgoritmusCodus
             // SwopLb
             // 
             this.SwopLb.AutoSize = true;
-            this.SwopLb.Location = new System.Drawing.Point(12, 254);
+            this.SwopLb.Location = new System.Drawing.Point(353, 182);
             this.SwopLb.Name = "SwopLb";
             this.SwopLb.Size = new System.Drawing.Size(198, 20);
             this.SwopLb.TabIndex = 8;
             this.SwopLb.Text = "Количество перестановок: ";
+            // 
+            // CocktailSortButton
+            // 
+            this.CocktailSortButton.Location = new System.Drawing.Point(182, 118);
+            this.CocktailSortButton.Name = "CocktailSortButton";
+            this.CocktailSortButton.Size = new System.Drawing.Size(146, 60);
+            this.CocktailSortButton.TabIndex = 9;
+            this.CocktailSortButton.Text = "Шейкреная сортировка";
+            this.CocktailSortButton.UseVisualStyleBackColor = true;
+            this.CocktailSortButton.Click += new System.EventHandler(this.CocktailSortButton_Click);
+            // 
+            // InsertSortButton
+            // 
+            this.InsertSortButton.Location = new System.Drawing.Point(12, 200);
+            this.InsertSortButton.Name = "InsertSortButton";
+            this.InsertSortButton.Size = new System.Drawing.Size(145, 62);
+            this.InsertSortButton.TabIndex = 10;
+            this.InsertSortButton.Text = "Сортировка вставками";
+            this.InsertSortButton.UseVisualStyleBackColor = true;
+            this.InsertSortButton.Click += new System.EventHandler(this.InsertSortButton_Click);
+            // 
+            // CombSortButton
+            // 
+            this.CombSortButton.Location = new System.Drawing.Point(182, 200);
+            this.CombSortButton.Name = "CombSortButton";
+            this.CombSortButton.Size = new System.Drawing.Size(146, 62);
+            this.CombSortButton.TabIndex = 11;
+            this.CombSortButton.Text = "Сортировка гребешком";
+            this.CombSortButton.UseVisualStyleBackColor = true;
+            this.CombSortButton.Click += new System.EventHandler(this.CombSortButton_Click);
+            // 
+            // ShellSortButton
+            // 
+            this.ShellSortButton.Location = new System.Drawing.Point(12, 289);
+            this.ShellSortButton.Name = "ShellSortButton";
+            this.ShellSortButton.Size = new System.Drawing.Size(146, 62);
+            this.ShellSortButton.TabIndex = 12;
+            this.ShellSortButton.Text = "Сортировка Шелла";
+            this.ShellSortButton.UseVisualStyleBackColor = true;
+            this.ShellSortButton.Click += new System.EventHandler(this.ShellSortButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 533);
+            this.Controls.Add(this.ShellSortButton);
+            this.Controls.Add(this.CombSortButton);
+            this.Controls.Add(this.InsertSortButton);
+            this.Controls.Add(this.CocktailSortButton);
             this.Controls.Add(this.SwopLb);
             this.Controls.Add(this.CompareLb);
             this.Controls.Add(this.TimeLb);
@@ -202,6 +250,10 @@ namespace AlgoritmusCodus
         private System.Windows.Forms.Label TimeLb;
         private System.Windows.Forms.Label CompareLb;
         private System.Windows.Forms.Label SwopLb;
+        private System.Windows.Forms.Button CocktailSortButton;
+        private System.Windows.Forms.Button InsertSortButton;
+        private System.Windows.Forms.Button CombSortButton;
+        private System.Windows.Forms.Button ShellSortButton;
     }
 }
 
