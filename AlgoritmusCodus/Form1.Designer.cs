@@ -47,6 +47,10 @@ namespace AlgoritmusCodus
             this.CombSortButton = new System.Windows.Forms.Button();
             this.ShellSortButton = new System.Windows.Forms.Button();
             this.SelectionSortButton = new System.Windows.Forms.Button();
+            this.HeapSortButton = new System.Windows.Forms.Button();
+            this.GnomeSortButton = new System.Windows.Forms.Button();
+            this.ClearButton = new System.Windows.Forms.Button();
+            this.TreeSortButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -133,7 +137,7 @@ namespace AlgoritmusCodus
             // 
             // BubleButton
             // 
-            this.BubleButton.Location = new System.Drawing.Point(12, 117);
+            this.BubleButton.Location = new System.Drawing.Point(12, 150);
             this.BubleButton.Name = "BubleButton";
             this.BubleButton.Size = new System.Drawing.Size(146, 61);
             this.BubleButton.TabIndex = 5;
@@ -170,7 +174,7 @@ namespace AlgoritmusCodus
             // 
             // CocktailSortButton
             // 
-            this.CocktailSortButton.Location = new System.Drawing.Point(182, 118);
+            this.CocktailSortButton.Location = new System.Drawing.Point(182, 151);
             this.CocktailSortButton.Name = "CocktailSortButton";
             this.CocktailSortButton.Size = new System.Drawing.Size(146, 60);
             this.CocktailSortButton.TabIndex = 9;
@@ -180,7 +184,7 @@ namespace AlgoritmusCodus
             // 
             // InsertSortButton
             // 
-            this.InsertSortButton.Location = new System.Drawing.Point(12, 200);
+            this.InsertSortButton.Location = new System.Drawing.Point(12, 232);
             this.InsertSortButton.Name = "InsertSortButton";
             this.InsertSortButton.Size = new System.Drawing.Size(145, 62);
             this.InsertSortButton.TabIndex = 10;
@@ -190,7 +194,7 @@ namespace AlgoritmusCodus
             // 
             // CombSortButton
             // 
-            this.CombSortButton.Location = new System.Drawing.Point(182, 200);
+            this.CombSortButton.Location = new System.Drawing.Point(182, 232);
             this.CombSortButton.Name = "CombSortButton";
             this.CombSortButton.Size = new System.Drawing.Size(146, 62);
             this.CombSortButton.TabIndex = 11;
@@ -200,7 +204,7 @@ namespace AlgoritmusCodus
             // 
             // ShellSortButton
             // 
-            this.ShellSortButton.Location = new System.Drawing.Point(12, 289);
+            this.ShellSortButton.Location = new System.Drawing.Point(12, 321);
             this.ShellSortButton.Name = "ShellSortButton";
             this.ShellSortButton.Size = new System.Drawing.Size(146, 62);
             this.ShellSortButton.TabIndex = 12;
@@ -210,7 +214,7 @@ namespace AlgoritmusCodus
             // 
             // SelectionSortButton
             // 
-            this.SelectionSortButton.Location = new System.Drawing.Point(182, 289);
+            this.SelectionSortButton.Location = new System.Drawing.Point(182, 321);
             this.SelectionSortButton.Name = "SelectionSortButton";
             this.SelectionSortButton.Size = new System.Drawing.Size(146, 61);
             this.SelectionSortButton.TabIndex = 13;
@@ -218,11 +222,55 @@ namespace AlgoritmusCodus
             this.SelectionSortButton.UseVisualStyleBackColor = true;
             this.SelectionSortButton.Click += new System.EventHandler(this.SelectionSortButton_Click);
             // 
+            // HeapSortButton
+            // 
+            this.HeapSortButton.Location = new System.Drawing.Point(12, 404);
+            this.HeapSortButton.Name = "HeapSortButton";
+            this.HeapSortButton.Size = new System.Drawing.Size(145, 61);
+            this.HeapSortButton.TabIndex = 14;
+            this.HeapSortButton.Text = "Сортировка     кучей";
+            this.HeapSortButton.UseVisualStyleBackColor = true;
+            this.HeapSortButton.Click += new System.EventHandler(this.HeapSortButton_Click);
+            // 
+            // GnomeSortButton
+            // 
+            this.GnomeSortButton.Location = new System.Drawing.Point(182, 404);
+            this.GnomeSortButton.Name = "GnomeSortButton";
+            this.GnomeSortButton.Size = new System.Drawing.Size(146, 60);
+            this.GnomeSortButton.TabIndex = 15;
+            this.GnomeSortButton.Text = "Гномья сортировка";
+            this.GnomeSortButton.UseVisualStyleBackColor = true;
+            this.GnomeSortButton.Click += new System.EventHandler(this.GnomeSortButton_Click);
+            // 
+            // ClearButton
+            // 
+            this.ClearButton.Location = new System.Drawing.Point(13, 491);
+            this.ClearButton.Name = "ClearButton";
+            this.ClearButton.Size = new System.Drawing.Size(94, 29);
+            this.ClearButton.TabIndex = 16;
+            this.ClearButton.Text = "Очистить";
+            this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
+            // 
+            // TreeSortButton
+            // 
+            this.TreeSortButton.Location = new System.Drawing.Point(353, 232);
+            this.TreeSortButton.Name = "TreeSortButton";
+            this.TreeSortButton.Size = new System.Drawing.Size(146, 62);
+            this.TreeSortButton.TabIndex = 17;
+            this.TreeSortButton.Text = "Сортировка деревом";
+            this.TreeSortButton.UseVisualStyleBackColor = true;
+            this.TreeSortButton.Click += new System.EventHandler(this.TreeSortButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(996, 533);
+            this.Controls.Add(this.TreeSortButton);
+            this.Controls.Add(this.ClearButton);
+            this.Controls.Add(this.GnomeSortButton);
+            this.Controls.Add(this.HeapSortButton);
             this.Controls.Add(this.SelectionSortButton);
             this.Controls.Add(this.ShellSortButton);
             this.Controls.Add(this.CombSortButton);
@@ -267,6 +315,10 @@ namespace AlgoritmusCodus
         private System.Windows.Forms.Button CombSortButton;
         private System.Windows.Forms.Button ShellSortButton;
         private System.Windows.Forms.Button SelectionSortButton;
+        private System.Windows.Forms.Button HeapSortButton;
+        private System.Windows.Forms.Button GnomeSortButton;
+        private System.Windows.Forms.Button ClearButton;
+        private System.Windows.Forms.Button TreeSortButton;
     }
 }
 

@@ -1,4 +1,5 @@
 ﻿using Algorithm;
+using Algorithm.DataStructure;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -52,6 +53,8 @@ namespace AlgoritmusCodus
             FilledTextBox.Text = "";
         }
 
+
+
         private void DrawItems(List<SortedItem> items)
         {
             panel3.Controls.Clear();
@@ -82,27 +85,37 @@ namespace AlgoritmusCodus
 
         private void Algorithm_SwopEvent(object sender, Tuple<SortedItem, SortedItem> e)
         {
+            e.Item1.SetColor(Color.Red);
+            e.Item2.SetColor(Color.Blue);
+            panel3.Refresh();
+
+            Thread.Sleep(20);
+
             var temp = e.Item1.Number;
             e.Item1.SetNewPosition(e.Item2.Number);
             e.Item2.SetNewPosition(temp);
             panel3.Refresh();
 
+            Thread.Sleep(20);
+
             e.Item1.SetColor(Color.Green);
             e.Item2.SetColor(Color.Green);
             panel3.Refresh();
+
+            Thread.Sleep(20);
         }
 
         private void Algorithm_CompareEvent(object sender, Tuple<SortedItem, SortedItem> e)
         {
-            e.Item1.SetColor(Color.Red);
-            e.Item2.SetColor(Color.Blue);
             panel3.Refresh();
 
-            Thread.Sleep(15);
+            Thread.Sleep(20);
 
             e.Item1.SetColor(Color.Green);
             e.Item2.SetColor(Color.Green);
             panel3.Refresh();
+
+            Thread.Sleep(20);
         }
 
         private void Swop(SortedItem a, SortedItem b)
@@ -114,6 +127,12 @@ namespace AlgoritmusCodus
         public void BtnCLick(AlgorithmBase<SortedItem> algorithm)
         {
             RefreshItems();
+
+            for (int i = 0; i < algorithm.Items.Count; i++)
+            {
+                algorithm.Items[i].SetNewPosition(i);
+            }
+            panel3.Refresh();
 
             algorithm.CompareEvent += Algorithm_CompareEvent;
             algorithm.SwopEvent += Algorithm_SwopEvent;
@@ -160,5 +179,33 @@ namespace AlgoritmusCodus
             var selection = new SelectionSort<SortedItem>(items);
             BtnCLick(selection);
         }
+
+        private void HeapSortButton_Click(object sender, EventArgs e)
+        {
+            var heap = new Heap<SortedItem>(items);
+            BtnCLick(heap);
+        }
+
+        private void GnomeSortButton_Click(object sender, EventArgs e)
+        {
+            var gnome = new GnomeSort<SortedItem>(items);
+            BtnCLick(gnome);
+        }
+
+        private void TreeSortButton_Click(object sender, EventArgs e)
+        {
+            var tree = new Tree<SortedItem>(items);
+            BtnCLick(tree);
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            items.Clear();
+
+            panel3.Controls.Clear();
+            panel3.Refresh();
+        }
+
+        
     }
 }

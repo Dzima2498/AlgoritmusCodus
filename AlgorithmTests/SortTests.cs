@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Algorithm.DataStructure;
 
 namespace Algorithm.Tests
 {
@@ -141,9 +142,7 @@ namespace Algorithm.Tests
         public void TreeSortTest()
         {
             //arrange
-            var tree = new TreeSort<int>();
-
-            tree.Items.AddRange(Items);
+            var tree = new Tree<int>(Items);
 
             //act
             tree.Sort();
@@ -159,9 +158,7 @@ namespace Algorithm.Tests
         public void HeapSortTest()
         {
             //arrange
-            var heap = new HeapSort<int>();
-
-            heap.Items.AddRange(Items);
+            var heap = new Heap<int>(Items);
 
             //act
             heap.Sort();
@@ -189,6 +186,25 @@ namespace Algorithm.Tests
             for (int i = 0; i < Items.Count - 1; i++)
             {
                 Assert.AreEqual(Sorted[i], selection.Items[i]);
+            }
+
+        }
+
+        [TestMethod()]
+        public void GnomeSortTest()
+        {
+            //arrange
+            var gnome = new GnomeSort<int>();
+
+            gnome.Items.AddRange(Items);
+
+            //act
+            gnome.Sort();
+
+            //assert
+            for (int i = 0; i < Items.Count - 1; i++)
+            {
+                Assert.AreEqual(Sorted[i], gnome.Items[i]);
             }
 
         }
